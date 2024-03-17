@@ -1,0 +1,14 @@
+/*
+FOOTER
+ */
+.footer {
+    width: 100%;
+    background-color: var(--white-color);
+    text-align: center;
+}
+
+.footer_content {
+    color: var(--black-color);
+    font-size: .8em;
+    padding: .8em;
+}

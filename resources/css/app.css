@@ -1,0 +1,40 @@
+@import "reset.css";
+@import "navbar.css";
+@import "home.css";
+@import "footer.css";
+/*
+ROOT
+ */
+:root {
+    --black-color: rgb(89, 89, 89);
+    --white-color: rgb(255, 230, 255);
+    --purple-color: rgb(102, 9, 57);
+    --pink-dark-color: rgb(179, 17, 102);
+    --pink-light-color: rgb(224, 20, 126);
+}
+
+/*
+GENERAL
+ */
+@font-face {
+    font-family: Folks;
+    src: url("../fonts/Folks-Normal.ttf");
+}
+
+html {
+    font-family: Folks, sans-serif;
+    font-size: 1em;
+}
+h1 {
+    font-size: 3em;
+    color: var(--white-color);
+}
+
+
+h2 {
+    font-size: 2em;
+}
+
+a {
+    text-decoration: none;
+}

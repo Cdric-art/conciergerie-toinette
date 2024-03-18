@@ -12,7 +12,7 @@
 
     <title>Conciergerie Toinette</title>
 
-    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}" />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
 <body>

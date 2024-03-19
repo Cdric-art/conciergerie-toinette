@@ -1,16 +1,20 @@
-@import "reset.css";
-@import "navbar.css";
 @import "home.css";
 @import "footer.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 /*
 ROOT
  */
 :root {
-    --black-color: rgb(89, 89, 89);
-    --white-color: rgb(255, 230, 255);
-    --purple-color: rgb(102, 9, 57);
-    --pink-dark-color: rgb(179, 17, 102);
-    --pink-light-color: rgb(224, 20, 126);
+    --black-color: #595959;
+    --white-color: #FFE6FF;
+    --purple-color: #660939;
+    --pink-dark-color: #B31166;
+    --pink-light-color: #E0147E;
 }
 
 /*
@@ -19,6 +23,16 @@ GENERAL
 @font-face {
     font-family: Folks;
     src: url("../fonts/Folks-Normal.ttf");
+}
+
+@layer base {
+    @font-face {
+        font-family: Folks;
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../fonts/Folks-Normal.ttf") format('ttf');
+    }
 }
 
 html {

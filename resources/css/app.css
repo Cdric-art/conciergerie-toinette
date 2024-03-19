@@ -26,13 +26,12 @@ html {
     font-size: 1em;
 }
 h1 {
-    font-size: 3em;
-    color: var(--white-color);
+    font-size: 6em;
+    color: var(--pink-dark-color);
 }
 
-
 h2 {
-    font-size: 2em;
+    font-size: 3em;
 }
 
 a {

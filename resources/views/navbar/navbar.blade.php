@@ -4,7 +4,7 @@
         <img class="max-h-20 p-1" src="{{ asset('assets/logo/icon.png') }}" alt="Logo">
     </a>
 
-    <div class="flex justify-between items-center w-6/12 duration-300">
+    <div class="flex items-center duration-300">
 
         <div class="group relative border border-pinkDark mx-1.5 duration-300 hover:bg-pinkDark hover:border-white">
             <a href="/services" class="block text-pinkDark px-16 py-3 duration-300 group-hover:text-white">Services au quotidien</a>

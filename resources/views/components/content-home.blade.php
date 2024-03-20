@@ -17,7 +17,7 @@
                     @endif
                 </div>
                 @if(!empty($description))
-                    <div class="flex flex-col justify-center items-start min-h-[300px] w-[600px] text-white bg-pinkDark px-8 py-4">
+                    <div class="flex flex-col justify-center items-start min-h-[300px] w-[600px] text-wht bg-pinkDark px-8 py-4">
                         <h3 class="text-4xl pb-2">{{ $title }}</h3>
                         <p class="text-start">{{ $description }}</p>
                     </div>
@@ -28,7 +28,7 @@
             @if($descriptionInverse)
 
                 @if(!empty($description))
-                    <div class="flex flex-col justify-center items-start min-h-[300px] w-[600px] text-white bg-pinkDark px-8 py-4">
+                    <div class="flex flex-col justify-center items-start min-h-[300px] w-[600px] text-wht bg-pinkDark px-8 py-4">
                         <h3 class="text-4xl pb-2">{{ $title }}</h3>
                         <p class="text-start">{{ $description }}</p>
                     </div>

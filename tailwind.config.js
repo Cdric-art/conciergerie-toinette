@@ -11,14 +11,14 @@ export default {
 
     theme: {
         colors: {
-            black: '#595959',
-            white: '#FFE6FF',
         },
         fontFamily: {
             sans: ['Folks', 'ui-sans-serif'],
         },
         extend: {
             colors: {
+                blk: '#595959',
+                wht: '#FFE6FF',
                 purple: '#660939',
                 pinkDark: '#B31166',
                 pinkLight: '#E0147E'

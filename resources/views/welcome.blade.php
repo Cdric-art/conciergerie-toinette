@@ -1,7 +1,7 @@
 @include('header.header')
 @include('navbar.navbar')
 
-<section class="text-center bg-white p-8">
+<section class="text-center bg-wht p-8">
 
     <h1 class="text-8xl text-pinkDark mt-12">CONCIERGERIE TOINETTE</h1>
     <h2 class="text-6xl text-pinkLight mt-3">Sous-Titre</h2>

@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/*
-ROOT
- */
-:root {
-    --black-color: #595959;
-    --white-color: #FFE6FF;
-    --purple-color: #660939;
-    --pink-dark-color: #B31166;
-    --pink-light-color: #E0147E;
-}
-
 @font-face {
     font-family: Folks;
     font-style: normal;

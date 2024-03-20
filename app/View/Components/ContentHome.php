@@ -14,6 +14,7 @@ class ContentHome extends Component
     public function __construct(
         public string $title,
         public string $description,
+        public string $image,
         public bool $descriptionInverse,
     )
     {

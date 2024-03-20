@@ -6,14 +6,18 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class home-dashboard extends Component
+class HomeDashboard extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(
+        public string $title,
+        public string $description,
+        public string $image,
+        public bool $descriptionInverse,
+    )
     {
-        //
     }
 
     /**

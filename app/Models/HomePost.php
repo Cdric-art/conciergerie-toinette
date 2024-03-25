@@ -10,9 +10,13 @@ class HomePost extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'title',
         'content',
         'image',
         'inverseContent',
+        'createdAt',
+        'updatedAt'
     ];
+
 }

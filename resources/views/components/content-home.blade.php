@@ -10,7 +10,7 @@
 
                 <div>
                     <a href="">
-                        <img class="min-h-[300px]" src="https://placehold.co/400x300" alt="image">
+                        <img class="max-h-[300px]" src="{{ asset('images/' . $image) }}" alt="image">
                     </a>
                     @if(empty($description))
                         <h3 class="text-4xl text-pinkLight pt-2">{{ $title }}</h3>
@@ -35,7 +35,7 @@
                 @endif
                 <div>
                     <a href="">
-                        <img class="min-h-[300px]" src="https://placehold.co/400x300" alt="image">
+                        <img class="max-h-[300px]" src="{{ asset('images/' . $image) }}" alt="image">
                     </a>
                     @if(empty($description))
                         <h3 class="text-4xl text-pinkLight pt-2">{{ $title }}</h3>

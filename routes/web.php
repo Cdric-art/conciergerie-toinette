@@ -14,6 +14,8 @@ Route::get('/services', function () {
 Route::controller(\App\Http\Controllers\HomePostController::class)->middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', 'index')->name('dashboard');
     Route::post('/dashboard', 'store')->name('dashboard.store');
+    Route::get('dashboard/edit/{id}', 'edit')->name('dashboard.edit');
+    Route::put('dashboard/update/{homePost}', 'update')->name('dashboard.update');
     Route::delete('/dashboard/{homePost}', 'destroy')->name('dashboard.destroy');
 });
 

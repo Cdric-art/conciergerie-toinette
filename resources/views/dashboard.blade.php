@@ -93,12 +93,12 @@
                         @endif
                     </td>
                     <td class="px-6 py-4">
-                        {{ date('d-m-Y', strtotime($homePost->createdAt)) }}
+                        {{ date('d-m-Y', strtotime($homePost->created_at)) }}
                     </td><td class="px-6 py-4">
-                        {{ date('d-m-Y', strtotime($homePost->updatedAt)) }}
+                        {{ date('d-m-Y', strtotime($homePost->updated_at)) }}
                     </td>
                     <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-blue-600 hover:underline">Editer</a>
+                        <a href="{{ route('dashboard.edit', $homePost->id) }}">Editer</a>
                         <span>/</span>
                         <form action="{{ route('dashboard.destroy', $homePost) }}" method="post">
                             @csrf

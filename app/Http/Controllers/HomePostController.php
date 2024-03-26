@@ -22,14 +22,6 @@ class HomePostController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request) :RedirectResponse
@@ -38,8 +30,6 @@ class HomePostController extends Controller
         if ($request->hasFile('image')) {
 
             $imageName = time() . '.' . $request->file('image')->extension();
-
-            // Public Folder
             $request->file('image')->move(public_path('images'), $imageName);
 
         }
@@ -67,17 +57,41 @@ class HomePostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(HomePost $homePost)
+    public function edit(string $homePost) :View
     {
-        //
+        $homePost = HomePost::query()->find($homePost);
+        return view('homepost.edit-post', compact('homePost'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, HomePost $homePost)
+    public function update(Request $request, HomePost $homePost) :RedirectResponse
     {
-        //
+        if ($request->hasFile('image')) {
+            $img_path = public_path('images/' . $homePost->image);
+            \Illuminate\Support\Facades\File::delete($img_path);
+
+            $imageName = time() . '.' . $request->file('image')->extension();
+            $request->file('image')->move(public_path('images'), $imageName);
+
+            $homePost->update([
+               "image" => $imageName,
+            ]);
+
+            $homePost->save();
+        }
+
+        $homePost->update([
+            "title" => $request->get('title'),
+            "content" => $request->get('content'),
+            "inverseContent" => $request->get('inverseContent') ?? false,
+            "updated_at" => time(),
+        ]);
+
+        $homePost->save();
+
+        return redirect(route('dashboard'));
     }
 
     /**

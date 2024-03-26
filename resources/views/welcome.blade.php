@@ -1,18 +1,66 @@
-@include('header.header')
-@include('navbar.navbar')
+<x-home-layout>
+    <section class="text-center bg-pinkDark">
 
-<section class="text-center bg-wht p-8">
+        <div class="pt-20">
+            <h1 class="text-6xl text-wht">CONCIERGERIE TOINETTE</h1>
+            <h2 class="text-5xl text-wht mt-3">Sous-Titre</h2>
+        </div>
 
-    <h1 class="text-8xl text-pinkDark mt-12">CONCIERGERIE TOINETTE</h1>
-    <h2 class="text-6xl text-pinkLight mt-3">Sous-Titre</h2>
+        <section class="max-w-8xl flex flex-wrap items-center mt-8 mx-auto">
 
-    <section class="flex flex-wrap items-center gap-8 mt-16 mb-8 mx-auto px-22">
+            @foreach($homePosts as $homePost)
+                <div class="flex flex-wrap justify-center items-center my-16 mx-auto">
 
-        @foreach($homePosts as $homePost)
-            <x-content-home title="{{ $homePost->title }}" description="{{ $homePost->content }}" image="{{ $homePost->image }}" descriptionInverse="{{ $homePost->inverseContent }}"/>
-        @endforeach
+                    @if(empty($homePost->title) && empty($homePost->contentInverse) && !empty($homePost->content))
+                        <p class="md:text-2xl text-center text-wht p-4 w-full md:mx-40 xl:mx-60">{{ $homePost->content }}</p>
+                    @endif
 
+                    @if(!empty($homePost->title))
+
+                        @if(!$homePost->inverseContent)
+
+                            <div class="relative">
+                                <a href="">
+                                    <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]" src="{{ asset('images/' . $homePost->image) }}" alt="image">
+                                </a>
+                                @if(empty($homePost->content))
+                                    <h3 class="block absolute bottom-0 left-0 right-0 text-3xl text-pinkLight pt-2">{{ $homePost->title }}</h3>
+                                @endif
+                            </div>
+                            @if(!empty($homePost->content))
+                                <div class="flex flex-col justify-center items-start min-h-[300px] sm:w-[600px] text-wht bg-pinkDark px-8 py-4">
+                                    <h3 class="text-3xl md:text-6xl pb-2">{{ $homePost->title }}</h3>
+                                    <p class="text-start md:text-2xl">{{ $homePost->content }}</p>
+                                </div>
+                            @endif
+
+                        @endif
+
+                        @if($homePost->inverseContent)
+
+                            @if(!empty($homePost->content))
+                                <div class="flex flex-col justify-center items-start min-h-[300px] sm:w-[600px] text-wht bg-pinkDark px-8 py-4">
+                                    <h3 class="text-3xl md:text-6xl pb-2">{{ $homePost->title }}</h3>
+                                    <p class="text-start md:text-2xl">{{ $homePost->content }}</p>
+                                </div>
+                            @endif
+                            <div>
+                                <a href="">
+                                    <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]" src="{{ asset('images/' . $homePost->image) }}" alt="image">
+                                </a>
+                                @if(empty($homePost->content))
+                                    <h3 class="text-4xl text-pinkLight pt-2">{{ $homePost->title }}</h3>
+                                @endif
+                            </div>
+
+                        @endif
+
+                    @endif
+
+                </div>
+
+            @endforeach
+
+        </section>
     </section>
-</section>
-
-@include('footer.footer')
+</x-home-layout>

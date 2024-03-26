@@ -7,7 +7,7 @@
 
     <x-sidebar/>
 
-    <div class="relative max-w-7xl left-[304px] top-[16px] mb-8 shadow-md sm:rounded-lg">
+    <div class="relative max-w-6xl left-[304px] top-[16px] mb-8 shadow-md sm:rounded-lg">
         <h2 class="font-semibold text-gray-800 leading-tight p-4">
             {{ __("Page d'accueil") }}
         </h2>
@@ -80,13 +80,13 @@
                         {{ $homePost->title }}
                     </th>
                     <td class="px-6 py-4">
-                        {{ $homePost->content }}
+                        {{ \Illuminate\Support\Str::of($homePost->content)->limit(100) }}
                     </td>
                     <td class="px-6 py-4">
-                        <img class="w-1/2" src="{{ asset('images/' . $homePost->image) }}" alt="{{ $homePost->image }}">
+                        <img class="w-1/4" src="{{ asset('images/' . $homePost->image) }}" alt="{{ $homePost->image }}">
                     </td>
                     <td class="px-6 py-4">
-                        @if($homePost->descriptionInverse)
+                        @if($homePost->inverseContent)
                             Oui
                         @else
                             Non

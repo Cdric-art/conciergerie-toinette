@@ -17,8 +17,10 @@ class HomePostController extends Controller
      */
     public function index() :View
     {
-        $homePosts = HomePost::All();
-        return view('dashboard', compact('homePosts'));
+//        $homePosts = HomePost::All();
+        return view('dashboard', [
+            "homePosts" => HomePost::all()
+        ]);
     }
 
     /**
@@ -34,14 +36,12 @@ class HomePostController extends Controller
 
         }
 
-        $homePost = new HomePost([
+        HomePost::create([
             "title" => $request->get('title'),
             "content" => $request->get('content'),
             "inverseContent" => $request->get('inverseContent') ?? false,
             "image" => $imageName ?? null,
-        ]);
-
-        $homePost->save();
+        ])->save();
 
         return redirect(route('dashboard'));
     }
@@ -57,10 +57,11 @@ class HomePostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $homePost) :View
+    public function edit(HomePost $homePost) :View
     {
-        $homePost = HomePost::query()->find($homePost);
-        return view('homepost.edit-post', compact('homePost'));
+        return view('homepost.edit-post', [
+            "homePost" => $homePost
+        ]);
     }
 
     /**

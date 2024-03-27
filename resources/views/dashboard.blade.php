@@ -98,7 +98,7 @@
                         {{ date('d-m-Y', strtotime($homePost->updated_at)) }}
                     </td>
                     <td class="px-6 py-4">
-                        <a href="{{ route('dashboard.edit', $homePost->id) }}">Editer</a>
+                        <a href="{{ route('dashboard.edit', $homePost) }}">Editer</a>
                         <span>/</span>
                         <form action="{{ route('dashboard.destroy', $homePost) }}" method="post">
                             @csrf

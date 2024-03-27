@@ -1,12 +1,9 @@
 <x-home-layout>
     <section class="text-center bg-pinkDark">
 
-        <div class="pt-20">
-            <h1 class="text-6xl text-wht">CONCIERGERIE TOINETTE</h1>
-            <h2 class="text-5xl text-wht mt-3">Sous-Titre</h2>
-        </div>
+        <x-title title="CONCIERGERIE TOINETTE" subtitle="Sous titre" color="wht"/>
 
-        <section class="max-w-8xl flex flex-wrap items-center mt-8 mx-auto">
+        <section class="max-w-8xl flex flex-wrap items-center mx-auto">
 
             @foreach($homePosts as $homePost)
                 <div class="flex flex-wrap justify-center items-center my-16 mx-auto">
@@ -21,14 +18,16 @@
 
                             <div class="relative">
                                 <a href="">
-                                    <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]" src="{{ asset('images/' . $homePost->image) }}" alt="image">
+                                    <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
+                                         src="{{ asset('images/' . $homePost->image) }}" alt="image">
                                 </a>
                                 @if(empty($homePost->content))
                                     <h3 class="block absolute bottom-0 left-0 right-0 text-3xl text-pinkLight pt-2">{{ $homePost->title }}</h3>
                                 @endif
                             </div>
                             @if(!empty($homePost->content))
-                                <div class="flex flex-col justify-center items-start min-h-[300px] sm:w-[600px] text-wht bg-pinkDark px-8 py-4">
+                                <div
+                                    class="flex flex-col justify-center items-start min-h-[300px] sm:w-[600px] text-wht bg-pinkDark px-8 py-4">
                                     <h3 class="text-3xl md:text-6xl pb-2">{{ $homePost->title }}</h3>
                                     <p class="text-start md:text-2xl">{{ $homePost->content }}</p>
                                 </div>
@@ -39,14 +38,16 @@
                         @if($homePost->inverseContent)
 
                             @if(!empty($homePost->content))
-                                <div class="flex flex-col justify-center items-start min-h-[300px] sm:w-[600px] text-wht bg-pinkDark px-8 py-4">
+                                <div
+                                    class="flex flex-col justify-center items-start min-h-[300px] sm:w-[600px] text-wht bg-pinkDark px-8 py-4">
                                     <h3 class="text-3xl md:text-6xl pb-2">{{ $homePost->title }}</h3>
                                     <p class="text-start md:text-2xl">{{ $homePost->content }}</p>
                                 </div>
                             @endif
                             <div>
                                 <a href="">
-                                    <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]" src="{{ asset('images/' . $homePost->image) }}" alt="image">
+                                    <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
+                                         src="{{ asset('images/' . $homePost->image) }}" alt="image">
                                 </a>
                                 @if(empty($homePost->content))
                                     <h3 class="text-4xl text-pinkLight pt-2">{{ $homePost->title }}</h3>

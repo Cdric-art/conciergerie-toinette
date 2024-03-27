@@ -1,8 +1,7 @@
-@include('header.header')
-@include('navbar.navbar')
+<x-home-layout>
+    <section class="text-center bg-wht max-w-8xl mx-auto">
 
-<section class="service">
-    <h2>SERVICES AU QUOTIDIEN</h2>
-</section>
+        <x-title title="SERVICES AU QUOTIDIEN" subtitle="" color="pinkDark"/>
 
-@include('footer.footer')
+    </section>
+</x-home-layout>

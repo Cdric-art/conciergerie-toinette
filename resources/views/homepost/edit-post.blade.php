@@ -8,7 +8,7 @@
     <x-sidebar/>
 
     <div class="relative max-w-6xl left-[304px] top-[16px] mb-8 shadow-md sm:rounded-lg">
-        <h2 class="font-semibold text-gray-800 leading-tight p-4">
+        <h2 class="font-semibold text-gray-700 leading-tight p-4">
             {{ __("Modifier le post") }}
         </h2>
 

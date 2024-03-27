@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('price')->nullable();
             $table->timestamps();
-            $table->foreignId('servicesCategory_id')->references('id')->on('services_categories')->onDelete('cascade');
+            $table->foreign('servicesCategory_id')->references('id')->on('services_categories')->onDelete('cascade');
         });
     }
 

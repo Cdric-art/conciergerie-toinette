@@ -3,7 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+// HOME
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index'])->name('home');
+
+// SERVICES AU QUOTIDIEN
+Route::controller(\App\Http\Controllers\ServicesQuotidien::class)->group(function () {
+    Route::get('/services-au-quotidien', 'index')->name('servicesquotidien');
+});
 
 // ADMIN HOME
 Route::controller(\App\Http\Controllers\HomePostController::class)->middleware(['auth', 'verified'])->group(function () {

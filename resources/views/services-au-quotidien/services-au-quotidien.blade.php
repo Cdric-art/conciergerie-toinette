@@ -7,7 +7,7 @@
                 @foreach($categories as $category)
 
                 <div class="relative max-w-[380px] sm:max-w-[455px] my-8">
-                    <a href="">
+                    <a href="{{ route('servicesquotidien-category', $category) }}">
                         <img class="w-full"
                              src="{{ asset('images/' . $category->image) }}" alt="image">
                     </a>

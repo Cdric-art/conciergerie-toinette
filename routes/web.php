@@ -9,6 +9,7 @@ Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index'])->name
 // SERVICES AU QUOTIDIEN
 Route::controller(\App\Http\Controllers\ServicesQuotidien::class)->group(function () {
     Route::get('/services-au-quotidien', 'index')->name('servicesquotidien');
+    Route::get('/services-au-quotidien/{category}', 'show')->name('servicesquotidien-category');
 });
 
 // ADMIN HOME

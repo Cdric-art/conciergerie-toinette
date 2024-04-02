@@ -42,22 +42,22 @@
 
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Title
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Image
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Crée le
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Mise à jour le
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Action
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Services
                 </th>
             </tr>
@@ -67,19 +67,19 @@
 
             @foreach($categories as $category)
                 <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 border-b">
-                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
                         {{ $category->title }}
                     </td>
-                    <td class="px-6 py-4 w-1/4">
+                    <td class="px-4 py-4 w-1/4">
                         <img class="w-1/4" src="{{ asset('images/' . $category->image) }}" alt="{{ $category->image }}">
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         {{ date('d-m-Y', strtotime($category->created_at)) }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         {{ date('d-m-Y', strtotime($category->updated_at)) }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         <a href="{{ route('category.edit', $category) }}">Editer</a>
                         <span>/</span>
                         <form action="{{ route('category.destroy', $category) }}" method="post">
@@ -88,7 +88,7 @@
                             <button class="font-medium text-red-600" type="submit">Supprimer</button>
                         </form>
                     </td>
-                    <td class="px-6 py-4 underline">
+                    <td class="px-4 py-4 underline">
                         <a href="{{ route('services', $category) }}">Accéder</a>
                     </td>
                 </tr>

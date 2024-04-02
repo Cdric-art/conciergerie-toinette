@@ -12,7 +12,7 @@ Route::controller(\App\Http\Controllers\ServicesQuotidienController::class)->gro
     Route::get('/services-au-quotidien/{category}', 'show')->name('servicesquotidien-category');
 });
 
-// ADMIN HOME
+// ADMIN - HOME
 Route::controller(\App\Http\Controllers\HomePostController::class)->middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', 'index')->name('dashboard');
     Route::post('/dashboard', 'store')->name('dashboard.store');
@@ -21,7 +21,7 @@ Route::controller(\App\Http\Controllers\HomePostController::class)->middleware([
     Route::delete('/dashboard/{homePost}', 'destroy')->name('dashboard.destroy');
 });
 
-// ADMIN SERVICES
+// ADMIN - SERVICES AU QUOTIDIEN
 Route::controller(\App\Http\Controllers\ServicesCategoryController::class)->middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
    Route::get('/category-services', 'index')->name('category');
     Route::post('/category-services', 'store')->name('category.store');
@@ -38,6 +38,10 @@ Route::controller(\App\Http\Controllers\ServicesPostController::class)->middlewa
     Route::delete('services/destroy/{service}', 'destroy')->name('services.destroy');
 });
 
+// ADMIN - CONCIERGERIE AIRBNB
+
+
+// AUTH
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

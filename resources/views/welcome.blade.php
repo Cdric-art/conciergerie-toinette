@@ -17,10 +17,8 @@
                         @if(!$homePost->inverseContent)
 
                             <div class="relative">
-                                <a href="">
-                                    <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
-                                         src="{{ asset('images/' . $homePost->image) }}" alt="image">
-                                </a>
+                                <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
+                                     src="{{ asset('images/' . $homePost->image) }}" alt="image">
                                 @if(empty($homePost->content))
                                     <h3 class="block absolute bottom-0 left-0 right-0 text-3xl text-pinkLight pt-2">{{ $homePost->title }}</h3>
                                 @endif
@@ -45,10 +43,8 @@
                                 </div>
                             @endif
                             <div>
-                                <a href="">
-                                    <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
-                                         src="{{ asset('images/' . $homePost->image) }}" alt="image">
-                                </a>
+                                <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
+                                     src="{{ asset('images/' . $homePost->image) }}" alt="image">
                                 @if(empty($homePost->content))
                                     <h3 class="text-4xl text-pinkLight pt-2">{{ $homePost->title }}</h3>
                                 @endif

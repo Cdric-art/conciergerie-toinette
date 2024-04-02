@@ -61,32 +61,32 @@
             </div>
         </form>
 
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+        <table class="text-xs text-left rtl:text-right text-gray-500">
 
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <thead class="text-gray-700 uppercase bg-gray-50">
             <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Title
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Description
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Post Scriptum
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Image
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Prix
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Misa à jour le
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Crée le
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Action
                 </th>
             </tr>
@@ -96,28 +96,28 @@
 
             @foreach($services as $service)
                 <tr class="text-xs odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 border-b">
-                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
                         {{ $service->title }}
                     </td>
-                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
                         {{ Str::of($service->content)->limit(30) }}
                     </td>
-                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
                         {{ Str::of($service->post_scriptum)->limit(30) }}
                     </td>
-                    <td class="px-6 py-4 w-1/4">
+                    <td class="px-4 py-4 w-1/4">
                         <img src="{{ asset('images/' . $service->image) }}" alt="{{ $service->image }}">
                     </td>
-                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
                         {{ $service->price }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         {{ date('d-m-Y', strtotime($service->created_at)) }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         {{ date('d-m-Y', strtotime($service->updated_at)) }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         <a href="{{ route('services.edit', $service) }}">Editer</a>
                         <span>/</span>
                         <form action="{{ route('services.destroy', $service) }}" method="post">

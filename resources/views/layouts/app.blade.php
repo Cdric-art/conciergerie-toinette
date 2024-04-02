@@ -24,7 +24,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="max-h-[80vh] overflow-y-scroll">
                 {{ $slot }}
             </main>
         </div>

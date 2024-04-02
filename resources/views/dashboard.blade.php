@@ -60,25 +60,25 @@
 
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Title
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Description
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Image
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Position de l'image à droite
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Crée le
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Mise à jour le
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Action
                 </th>
             </tr>
@@ -88,29 +88,29 @@
 
             @foreach($homePosts as $homePost)
                 <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 border-b">
-                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
                         {{ $homePost->title }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         {{ \Illuminate\Support\Str::of($homePost->content)->limit(100) }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         <img class="w-1/4" src="{{ asset('images/' . $homePost->image) }}" alt="{{ $homePost->image }}">
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         @if($homePost->inverseContent)
                             Oui
                         @else
                             Non
                         @endif
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         {{ date('d-m-Y', strtotime($homePost->created_at)) }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         {{ date('d-m-Y', strtotime($homePost->updated_at)) }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-4 py-4">
                         <a href="{{ route('dashboard.edit', $homePost) }}">Editer</a>
                         <span>/</span>
                         <form action="{{ route('dashboard.destroy', $homePost) }}" method="post">

@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\ServicesCategory;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
@@ -12,6 +13,8 @@ class HomeLayout extends Component
      */
     public function render(): View
     {
-        return view('layouts.home');
+        return view('layouts.home', [
+            'categories' => ServicesCategory::all(),
+        ]);
     }
 }

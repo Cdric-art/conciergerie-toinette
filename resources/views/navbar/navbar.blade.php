@@ -18,44 +18,14 @@
 
                     <div id="dropdownHoverServices" class="hidden z-10 bg-white divide-y divide-gray-100 text-sm w-11/12 md:w-40">
                         <ul class="text-wht bg-pinkLight" aria-labelledby="dropdownHoverButton">
-                            <li class="group flex justify-between items-center pr-4 border border-transparent hover:bg-wht hover:text-pinkLight hover:border-pinkLight">
-                                <a href="#" class="block px-4 py-2">Courses</a>
-                                <svg class="transition w-2 h-2 text-transparent group-hover:text-pinkLight" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"></path>
-                                </svg>
-                            </li>
-                            <li class="group flex justify-between items-center pr-4 border border-transparent hover:bg-wht hover:text-pinkLight hover:border-pinkLight">
-                                <a href="#" class="block px-4 py-2">Dépannage</a>
-                                <svg class="transition w-2 h-2 text-transparent group-hover:text-pinkLight" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"></path>
-                                </svg>
-                            </li>
-                            <li class="group flex justify-between items-center pr-4 border border-transparent hover:bg-wht hover:text-pinkLight hover:border-pinkLight">
-                                <a href="#" class="block px-4 py-2">
-                                    Organisation de vos loisirs
-                                </a>
-                                <svg class="transition w-2 h-2 text-transparent group-hover:text-pinkLight" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"></path>
-                                </svg>
-                            </li>
-                            <li class="group flex justify-between items-center pr-4 border border-transparent hover:bg-wht hover:text-pinkLight hover:border-pinkLight">
-                                <a href="#" class="block px-4 py-2">Assistance administrative</a>
-                                <svg class="transition w-2 h-2 text-transparent group-hover:text-pinkLight" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"></path>
-                                </svg>
-                            </li>
-                            <li class="group flex justify-between items-center pr-4 border border-transparent hover:bg-wht hover:text-pinkLight hover:border-pinkLight">
-                                <a href="#" class="block px-4 py-2">Pendant vos vacances</a>
-                                <svg class="transition w-2 h-2 text-transparent group-hover:text-pinkLight" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"></path>
-                                </svg>
-                            </li>
-                            <li class="group flex justify-between items-center pr-4 border border-transparent hover:bg-wht hover:text-pinkLight hover:border-pinkLight">
-                                <a href="#" class="block px-4 py-2">Accompagnement</a>
-                                <svg class="transition w-2 h-2 text-transparent group-hover:text-pinkLight" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"></path>
-                                </svg>
-                            </li>
+                            @foreach($categories as $category)
+                                <li class="group flex justify-between items-center pr-4 border border-transparent hover:bg-wht hover:text-pinkLight hover:border-pinkLight">
+                                    <a href="{{ route('servicesquotidien-category', $category->id) }}" class="block px-4 py-2">{{ $category->title }}</a>
+                                    <svg class="transition w-2 h-2 text-transparent group-hover:text-pinkLight" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"></path>
+                                    </svg>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </li>

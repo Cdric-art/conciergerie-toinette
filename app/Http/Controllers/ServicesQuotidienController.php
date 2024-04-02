@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\ServicesCategory;
 use App\Models\ServicesPost;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class ServicesQuotidien extends Controller
+class ServicesQuotidienController extends Controller
 {
     public function index(): View
     {

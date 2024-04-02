@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index'])->name('home');
 
 // SERVICES AU QUOTIDIEN
-Route::controller(\App\Http\Controllers\ServicesQuotidien::class)->group(function () {
+Route::controller(\App\Http\Controllers\ServicesQuotidienController::class)->group(function () {
     Route::get('/services-au-quotidien', 'index')->name('servicesquotidien');
     Route::get('/services-au-quotidien/{category}', 'show')->name('servicesquotidien-category');
 });
@@ -32,10 +32,10 @@ Route::controller(\App\Http\Controllers\ServicesCategoryController::class)->midd
 
 Route::controller(\App\Http\Controllers\ServicesPostController::class)->middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
     Route::get('/services/{category}', 'index')->name('services');
-    Route::post('/services/create', 'store')->name('services.create');
-    Route::get('services/edit/{category}', 'edit')->name('services.edit');
-    Route::put('services/update/{category}', 'update')->name('services.update');
-    Route::delete('services/destroy/{category}', 'destroy')->name('services.destroy');
+    Route::post('/services/create', 'store')->name('services.store');
+    Route::get('services/edit/{service}', 'edit')->name('services.edit');
+    Route::put('services/update/{service}', 'update')->name('services.update');
+    Route::delete('services/destroy/{service}', 'destroy')->name('services.destroy');
 });
 
 Route::middleware('auth')->group(function () {

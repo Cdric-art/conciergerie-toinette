@@ -18,7 +18,7 @@ class ServicesCategoryController extends Controller
         ]);
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request, ServicesCategory $category): RedirectResponse
     {
         $request->validate([
             'title' => 'required',

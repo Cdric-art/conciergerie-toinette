@@ -39,7 +39,9 @@ Route::controller(\App\Http\Controllers\ServicesPostController::class)->middlewa
 });
 
 // ADMIN - CONCIERGERIE AIRBNB
-
+Route::controller(\App\Http\Controllers\ConciergerieAirbnbController::class)->middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
+   Route::get('/conciergerie', 'index')->name('conciergerie');
+});
 
 // AUTH
 Route::middleware('auth')->group(function () {

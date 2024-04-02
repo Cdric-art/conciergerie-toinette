@@ -31,7 +31,7 @@
                 </li>
 
                 <li>
-                    <a href="#" id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="block py-2 px-3 text-pinkLight bg-wht border border-pinkLight hover:text-wht hover:border-wht hover:bg-pinkLight" type="button">
+                    <a href="{{ route('conciergerie_airbnb') }}" id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="block py-2 px-3 text-pinkLight bg-wht border border-pinkLight hover:text-wht hover:border-wht hover:bg-pinkLight" type="button">
                         Conciergerie AirBnb
                     </a>
 

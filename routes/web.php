@@ -12,8 +12,12 @@ Route::controller(\App\Http\Controllers\ServicesQuotidienController::class)->gro
     Route::get('/services-au-quotidien/{category}', 'show')->name('servicesquotidien-category');
 });
 
+Route::controller(\App\Http\Controllers\ConciergerieAirbnbController::class)->group(function () {
+   Route::get('conciergerie-airbnb', 'index')->name('conciergerie_airbnb');
+});
+
 // ADMIN - HOME
-Route::controller(\App\Http\Controllers\HomePostController::class)->middleware(['auth', 'verified'])->group(function () {
+Route::controller(\App\Http\Controllers\Admin\HomePostController::class)->middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', 'index')->name('dashboard');
     Route::post('/dashboard', 'store')->name('dashboard.store');
     Route::get('dashboard/edit/{homePost}', 'edit')->name('dashboard.edit');
@@ -22,7 +26,7 @@ Route::controller(\App\Http\Controllers\HomePostController::class)->middleware([
 });
 
 // ADMIN - SERVICES AU QUOTIDIEN
-Route::controller(\App\Http\Controllers\ServicesCategoryController::class)->middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
+Route::controller(\App\Http\Controllers\Admin\ServicesCategoryController::class)->middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
    Route::get('/category-services', 'index')->name('category');
     Route::post('/category-services', 'store')->name('category.store');
     Route::get('/category-services/edit/{category}', 'edit')->name('category.edit');
@@ -30,7 +34,7 @@ Route::controller(\App\Http\Controllers\ServicesCategoryController::class)->midd
     Route::delete('/category-services/destroy/{category}', 'destroy')->name('category.destroy');
 });
 
-Route::controller(\App\Http\Controllers\ServicesPostController::class)->middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
+Route::controller(\App\Http\Controllers\Admin\ServicesPostController::class)->middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
     Route::get('/services/{category}', 'index')->name('services');
     Route::post('/services/create', 'store')->name('services.store');
     Route::get('services/edit/{service}', 'edit')->name('services.edit');
@@ -39,7 +43,7 @@ Route::controller(\App\Http\Controllers\ServicesPostController::class)->middlewa
 });
 
 // ADMIN - CONCIERGERIE AIRBNB
-Route::controller(\App\Http\Controllers\ConciergerieAirbnbController::class)->middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
+Route::controller(\App\Http\Controllers\Admin\ConciergerieController::class)->middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
    Route::get('/conciergerie', 'index')->name('conciergerie');
 });
 

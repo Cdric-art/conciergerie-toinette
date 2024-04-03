@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\PostConciergerieAirbnb;
 use App\Models\ServicesCategory;
 use Illuminate\View\Component;
 use Illuminate\View\View;
@@ -15,6 +16,7 @@ class HomeLayout extends Component
     {
         return view('layouts.home', [
             'categories' => ServicesCategory::all(),
+            'posts_conciergerie_airbnb' => PostConciergerieAirbnb::all(),
         ]);
     }
 }

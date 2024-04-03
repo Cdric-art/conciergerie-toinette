@@ -4,6 +4,5 @@
         <x-title title="LOCATION AIRBNB" subtitle="Comment ça marche ?" color="wht"/>
 
 
-
     </section>
 </x-home-layout>

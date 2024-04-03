@@ -12,7 +12,7 @@
             Page d'accueil
         </h2>
 
-        <x-flash-message />
+        <x-flash-message/>
 
         <form method="POST" action="{{ route('dashboard.store') }}" enctype="multipart/form-data"
               class="flex justify-between items-center max-w-md m-4">
@@ -87,39 +87,39 @@
             <tbody>
 
             @foreach($homePosts as $homePost)
-                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 border-b">
-                    <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        {{ $homePost->title }}
-                    </td>
-                    <td class="px-4 py-4">
-                        {{ \Illuminate\Support\Str::of($homePost->content)->limit(100) }}
-                    </td>
-                    <td class="px-4 py-4">
-                        <img class="w-1/4" src="{{ asset('images/' . $homePost->image) }}" alt="{{ $homePost->image }}">
-                    </td>
-                    <td class="px-4 py-4">
-                        @if($homePost->inverseContent)
-                            Oui
-                        @else
-                            Non
-                        @endif
-                    </td>
-                    <td class="px-4 py-4">
-                        {{ date('d-m-Y', strtotime($homePost->created_at)) }}
-                    </td>
-                    <td class="px-4 py-4">
-                        {{ date('d-m-Y', strtotime($homePost->updated_at)) }}
-                    </td>
-                    <td class="px-4 py-4">
-                        <a href="{{ route('dashboard.edit', $homePost) }}">Editer</a>
-                        <span>/</span>
-                        <form action="{{ route('dashboard.destroy', $homePost) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button class="font-medium text-red-600" type="submit">Supprimer</button>
-                        </form>
-                    </td>
-                </tr>
+            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 border-b">
+                <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    {{ $homePost->title }}
+                </td>
+                <td class="px-4 py-4">
+                    {{ \Illuminate\Support\Str::of($homePost->content)->limit(100) }}
+                </td>
+                <td class="px-4 py-4">
+                    <img class="w-1/4" src="{{ asset('images/' . $homePost->image) }}" alt="{{ $homePost->image }}">
+                </td>
+                <td class="px-4 py-4">
+                    @if($homePost->inverseContent)
+                    Oui
+                    @else
+                    Non
+                    @endif
+                </td>
+                <td class="px-4 py-4">
+                    {{ date('d-m-Y', strtotime($homePost->created_at)) }}
+                </td>
+                <td class="px-4 py-4">
+                    {{ date('d-m-Y', strtotime($homePost->updated_at)) }}
+                </td>
+                <td class="px-4 py-4">
+                    <a href="{{ route('dashboard.edit', $homePost) }}">Editer</a>
+                    <span>/</span>
+                    <form action="{{ route('dashboard.destroy', $homePost) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button class="font-medium text-red-600" type="submit">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
             @endforeach
 
             </tbody>

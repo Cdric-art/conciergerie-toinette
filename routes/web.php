@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 // HOME
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index'])->name('home');
-
 // SERVICES AU QUOTIDIEN
+
 Route::controller(\App\Http\Controllers\ServicesQuotidienController::class)->group(function () {
     Route::get('/services-au-quotidien', 'index')->name('servicesquotidien');
     Route::get('/services-au-quotidien/{category}', 'show')->name('servicesquotidien-category');
@@ -15,6 +15,7 @@ Route::controller(\App\Http\Controllers\ServicesQuotidienController::class)->gro
 // CONCIERGERIE AIRBNB
 Route::controller(\App\Http\Controllers\ConciergerieAirbnbController::class)->group(function () {
     Route::get('conciergerie-airbnb', 'index')->name('conciergerie_airbnb');
+    Route::get('conciergerie-airbnb/{post}', 'show')->name('conciergerie_airbnb.post');
 });
 
 // ADMIN - HOME

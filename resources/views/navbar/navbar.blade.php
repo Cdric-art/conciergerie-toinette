@@ -53,8 +53,10 @@
                          class="z-10 hidden bg-white divide-y divide-gray-100 text-sm w-11/12 md:w-40">
                         <ul class="text-wht bg-purple w-full" aria-labelledby="dropdownHoverButton">
                             @foreach($posts_conciergerie_airbnb as $post)
+                            @if(!empty($post->slug))
                             <li class="group flex justify-between items-center pr-4 hover:bg-wht hover:text-pinkDark">
-                                <a href="#" class="block px-4 py-2">{{ $post->slug }}</a>
+                                <a href="{{ route('conciergerie_airbnb.post', $post) }}" class="block px-4 py-2">{{
+                                    $post->slug }}</a>
                                 <svg class="transition w-2 h-2 text-transparent group-hover:text-pinkDark"
                                      aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                      viewBox="0 0 8 14">
@@ -62,6 +64,7 @@
                                           stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"></path>
                                 </svg>
                             </li>
+                            @endif
                             @endforeach
                         </ul>
                     </div>

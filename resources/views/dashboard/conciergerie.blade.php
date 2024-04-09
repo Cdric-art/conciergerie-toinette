@@ -76,10 +76,10 @@
                     /Slug
                 </th>
                 <th scope="col" class="px-4 py-3">
-                    Title
+                    Titre
                 </th>
                 <th scope="col" class="px-4 py-3">
-                    Sous-Title
+                    Sous-Titre
                 </th>
                 <th scope="col" class="px-4 py-3">
                     Description

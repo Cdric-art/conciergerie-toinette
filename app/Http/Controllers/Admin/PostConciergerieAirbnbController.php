@@ -33,10 +33,6 @@ class PostConciergerieAirbnbController extends Controller
 
         }
 
-        $request->validate([
-            'slug' => 'required',
-        ]);
-
         PostConciergerieAirbnb::create([
             "slug" => $request->get('slug'),
             "title" => $request->get('title'),
@@ -64,9 +60,6 @@ class PostConciergerieAirbnbController extends Controller
      */
     public function update(Request $request, PostConciergerieAirbnb $post): RedirectResponse
     {
-        $request->validate([
-            'slug' => 'required'
-        ]);
 
         if ($request->hasFile('image')) {
             $img_path = public_path('images/' . $post->image);

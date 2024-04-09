@@ -1,7 +1,7 @@
 <x-home-layout>
     <section class="text-center bg-pinkDark">
 
-        <x-title title="CONCIERGERIE TOINETTE" subtitle="Sous titre" color="wht"/>
+        <x-title title="CONCIERGERIE TOINETTE" subtitle="Des bras en plus pour gérer votre quotidien" color="wht"/>
 
         <section class="max-w-[89rem] flex flex-wrap items-center mx-auto">
 

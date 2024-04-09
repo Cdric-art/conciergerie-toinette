@@ -1,8 +1,7 @@
 <x-home-layout>
     <section class="text-center bg-pinkDark">
 
-        <section class="max-w-[75vw] flex flex-wrap items-center mx-auto">
-
+        <section class="max-w-8xl flex flex-wrap items-center mx-auto">
             @foreach($posts as $post)
             <div class="flex flex-wrap justify-center items-center my-6 md:my-12 mx-auto">
 
@@ -114,3 +113,4 @@
 
     </section>
 </x-home-layout>
+

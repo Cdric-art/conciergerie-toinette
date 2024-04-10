@@ -17,6 +17,7 @@ class PostConciergerieAirbnb extends Model
         'content',
         'image',
         'inverseContent',
+        'showNavigation',
         'createdAt',
         'updatedAt'
     ];

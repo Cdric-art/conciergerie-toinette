@@ -53,7 +53,7 @@
                          class="z-10 hidden bg-white divide-y divide-gray-100 text-sm w-11/12 md:w-40">
                         <ul class="text-wht bg-purple w-full" aria-labelledby="dropdownHoverButton">
                             @foreach($posts_conciergerie_airbnb as $post)
-                            @if(!empty($post->slug))
+                            @if($post->showNavigation)
                             <li class="group flex justify-between items-center pr-4 hover:bg-wht hover:text-pinkDark">
                                 <a href="{{ route('conciergerie_airbnb.post', $post) }}" class="block px-4 py-2">{{
                                     $post->slug }}</a>

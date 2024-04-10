@@ -9,7 +9,7 @@
                 <p class="md:text-2xl text-center text-wht p-4 w-full md:mx-40 xl:mx-60">{{ $post->content }}</p>
                 @endif
 
-                @if(!empty($post->slug) && !empty($post->title))
+                @if(!empty($post->title) && empty($post->subtitle) && empty($post->image))
                 <x-title title="{{ $post->title }}" subtitle="" color="wht"/>
                 @endif
 

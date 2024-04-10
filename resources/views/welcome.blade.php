@@ -11,11 +11,11 @@
                 @if(empty($homePost->title) && empty($homePost->contentInverse) && !empty($homePost->content))
                 <p class="md:text-2xl text-center text-wht p-4 w-full md:mx-40 xl:mx-60">{{ $homePost->content }}</p>
                 @endif
-
+                
                 @if(!empty($homePost->title))
 
                 @if(!$homePost->inverseContent)
-
+                
                 <div class="relative">
                     <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
                          src="{{ asset('images/' . $homePost->image) }}" alt="image">

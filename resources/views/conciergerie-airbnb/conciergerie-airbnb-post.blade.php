@@ -3,10 +3,10 @@
 
         <section class="max-w-8xl flex flex-wrap items-center mx-auto">
             @foreach($posts as $post)
-            <div class="flex flex-wrap justify-center items-center my-6 md:my-12 mx-auto">
+            <div class="flex flex-wrap justify-center items-center my-6 mx-auto">
 
                 @if(empty($post->title) && empty($post->contentInverse) && !empty($post->content))
-                <p class="md:text-2xl text-center text-wht p-4 w-full md:mx-40 xl:mx-60">{{ $post->content }}</p>
+                <p class="md:text-2xl text-center text-wht p-4 w-full mx-40">{{ $post->content }}</p>
                 @endif
 
                 @if(!empty($post->title) && empty($post->subtitle) && empty($post->image))
@@ -67,10 +67,10 @@
                 @if(!$post->inverseContent)
 
                 <div class="relative">
-                    <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
+                    <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px] rounded-md"
                          src="{{ asset('images/' . $post->image) }}" alt="image">
                     @if(empty($post->content))
-                    <h3 class="block absolute bottom-[12px] left-0 right-0 text-3xl text-pinkDark pt-2">{{ $post->title
+                    <h3 class="block absolute bottom-[12px] left-0 right-0 text-3xl text-pinkDark px-2">{{ $post->title
                         }}</h3>
                     @endif
                 </div>

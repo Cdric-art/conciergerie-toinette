@@ -9,10 +9,11 @@ class welcomeController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * sortDesc()
      */
     public function index(): View
     {
-        $homePosts = HomePost::All()->sortDesc();
+        $homePosts = HomePost::All();
         return view('welcome', [
             'homePosts' => $homePosts
         ]);

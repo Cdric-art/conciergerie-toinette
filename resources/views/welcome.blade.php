@@ -27,7 +27,7 @@
                 @if(!empty($homePost->content))
                 <div
                     class="flex flex-col justify-center items-start min-h-[300px] sm:w-[600px] text-wht bg-pinkDark px-8 py-4">
-                    <h3 class="text-3xl md:text-6xl pb-2">{{ $homePost->title }}</h3>
+                    <h3 class="text-3xl md:text-6xl pb-2">{{ mb_strtoupper($homePost->title) }}</h3>
                     <p class="text-start md:text-2xl">{{ $homePost->content }}</p>
                 </div>
                 @endif
@@ -39,7 +39,7 @@
                 @if(!empty($homePost->content))
                 <div
                     class="flex flex-col justify-center items-start min-h-[300px] sm:w-[600px] text-wht bg-pinkDark px-8 py-4">
-                    <h3 class="text-3xl md:text-6xl pb-2">{{ $homePost->title }}</h3>
+                    <h3 class="text-3xl md:text-6xl pb-2">{{ mb_strtoupper($homePost->title) }}</h3>
                     <p class="text-start md:text-2xl">{{ $homePost->content }}</p>
                 </div>
                 @endif
@@ -47,7 +47,7 @@
                     <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
                          src="{{ asset('images/' . $homePost->image) }}" alt="image">
                     @if(empty($homePost->content))
-                    <h3 class="text-4xl text-purple pt-2">{{ $homePost->title }}</h3>
+                    <h3 class="text-4xl text-purple pt-2">{{ mb_strtoupper($homePost->title) }}</h3>
                     @endif
                 </div>
 

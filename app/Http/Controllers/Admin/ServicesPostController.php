@@ -36,6 +36,7 @@ class ServicesPostController extends Controller
             "servicesCategory_id" => $request->get('category_id'),
             "title" => $request->get('title'),
             "content" => $request->get('content'),
+            "second_content" => $request->get('second_content'),
             "post_scriptum" => $request->get('post_scriptum'),
             "price" => $request->get('price'),
             "image" => $imageName,
@@ -75,6 +76,7 @@ class ServicesPostController extends Controller
         $service->update([
             "title" => $request->get('title'),
             "content" => $request->get('content'),
+            "second_content" => $request->get('second_content'),
             "post_scriptum" => $request->get('post_scriptum'),
             "price" => $request->get('price'),
             "updated_at" => time(),

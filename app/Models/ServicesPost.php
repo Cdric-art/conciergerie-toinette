@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
+ *
  *
  * @property int $id
  * @property int $servicesCategory_id
@@ -38,7 +38,7 @@ class ServicesPost extends Model
 
     protected $fillable = [
 
-        'title', 'content', 'post_scriptum', 'image', 'price', 'servicesCategory_id'
+        'title', 'content', 'second_content', 'post_scriptum', 'image', 'price', 'servicesCategory_id'
 
     ];
 

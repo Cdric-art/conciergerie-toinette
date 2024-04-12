@@ -1,4 +1,4 @@
-<nav class="bg-pinkDark">
+<nav class="bg-wht">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="{{ asset('assets/logo/logo.png') }}" class="h-[6rem]" alt="Conciergerie Toinette Logo"/>
@@ -46,7 +46,7 @@
                        data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
                        class="block py-2 px-3 text-pinkDark bg-wht border border-pinkDark hover:text-wht hover:border-transparent hover:bg-purple"
                        type="button">
-                        Conciergerie AirBnb
+                        Conciergerie Airbnb
                     </a>
 
                     <div id="dropdownHover"
@@ -81,7 +81,7 @@
             </ul>
         </div>
         <div class="w-full md:block md:w-auto" id="navbar-multi-level">
-            <ul class="flex flex-col text-wht text-center p-4">
+            <ul class="flex flex-col text-pinkDark text-center p-4">
                 <li>
                     nina@conciergerie-toinette.fr
                 </li>

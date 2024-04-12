@@ -33,6 +33,13 @@
                 </textarea>
                 </div>
                 <div class="mb-5">
+                    <label for="second_content" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                    <textarea id="second_content" name="second_content" rows="4"
+                              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                              placeholder="Description...">
+                    </textarea>
+                </div>
+                <div class="mb-5">
                     <label for="post_scriptum"
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Post Scriptum</label>
                     <input type="text" id="post_scriptum" name="post_scriptum"
@@ -72,6 +79,9 @@
                     Description
                 </th>
                 <th scope="col" class="px-4 py-3">
+                    Seconde description
+                </th>
+                <th scope="col" class="px-4 py-3">
                     Post Scriptum
                 </th>
                 <th scope="col" class="px-4 py-3">
@@ -95,38 +105,41 @@
             <tbody>
 
             @foreach($services as $service)
-                <tr class="text-xs odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 border-b">
-                    <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        {{ $service->title }}
-                    </td>
-                    <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        {{ Str::of($service->content)->limit(30) }}
-                    </td>
-                    <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        {{ Str::of($service->post_scriptum)->limit(30) }}
-                    </td>
-                    <td class="px-4 py-4 w-1/4">
-                        <img src="{{ asset('images/' . $service->image) }}" alt="{{ $service->image }}">
-                    </td>
-                    <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        {{ $service->price }}
-                    </td>
-                    <td class="px-4 py-4">
-                        {{ date('d-m-Y', strtotime($service->created_at)) }}
-                    </td>
-                    <td class="px-4 py-4">
-                        {{ date('d-m-Y', strtotime($service->updated_at)) }}
-                    </td>
-                    <td class="px-4 py-4">
-                        <a href="{{ route('services.edit', $service) }}">Editer</a>
-                        <span>/</span>
-                        <form action="{{ route('services.destroy', $service) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button class="font-medium text-red-600" type="submit" >Supprimer</button>
-                        </form>
-                    </td>
-                </tr>
+            <tr class="text-xs odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 border-b">
+                <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    {{ $service->title }}
+                </td>
+                <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    {{ Str::of($service->content)->limit(15) }}
+                </td>
+                <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    {{ Str::of($service->second_content)->limit(15) }}
+                </td>
+                <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    {{ Str::of($service->post_scriptum)->limit(30) }}
+                </td>
+                <td class="px-4 py-4 w-1/4">
+                    <img src="{{ asset('images/' . $service->image) }}" alt="{{ $service->image }}">
+                </td>
+                <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    {{ $service->price }}
+                </td>
+                <td class="px-4 py-4">
+                    {{ date('d-m-Y', strtotime($service->created_at)) }}
+                </td>
+                <td class="px-4 py-4">
+                    {{ date('d-m-Y', strtotime($service->updated_at)) }}
+                </td>
+                <td class="px-4 py-4">
+                    <a href="{{ route('services.edit', $service) }}">Editer</a>
+                    <span>/</span>
+                    <form action="{{ route('services.destroy', $service) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button class="font-medium text-red-600" type="submit">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
             @endforeach
 
             </tbody>

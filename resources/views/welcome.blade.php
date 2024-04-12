@@ -3,7 +3,7 @@
 
         <x-title title="CONCIERGERIE TOINETTE" subtitle="Des bras en plus pour gérer votre quotidien" color="wht"/>
 
-        <section class="max-w-[89rem] flex flex-wrap items-center mx-auto">
+        <section class="max-w-[1440px] flex flex-wrap items-center mx-auto">
 
             @foreach($homePosts as $homePost)
             <div class="flex flex-wrap justify-center items-center my-12 mx-auto">
@@ -11,11 +11,11 @@
                 @if(empty($homePost->title) && empty($homePost->contentInverse) && !empty($homePost->content))
                 <p class="md:text-2xl text-center text-wht p-4 w-full md:mx-40 xl:mx-60">{{ $homePost->content }}</p>
                 @endif
-                
+
                 @if(!empty($homePost->title))
 
                 @if(!$homePost->inverseContent)
-                
+
                 <div class="relative">
                     <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
                          src="{{ asset('images/' . $homePost->image) }}" alt="image">

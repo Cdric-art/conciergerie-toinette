@@ -4,7 +4,7 @@
             <img src="{{ asset('assets/logo/logo.png') }}" class="h-[6rem]" alt="Conciergerie Toinette Logo"/>
         </a>
         <button data-collapse-toggle="navbar-multi-level" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-wht hover:text-wht hover:bg-purple md:hidden"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-pinkDark hover:text-wht hover:bg-purple md:hidden"
                 aria-controls="navbar-multi-level" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -24,7 +24,7 @@
 
                     <div id="dropdownHoverServices"
                          class="hidden z-10 bg-white divide-y divide-gray-100 text-sm w-11/12 md:w-40">
-                        <ul class="text-wht bg-purple" aria-labelledby="dropdownHoverButton">
+                        <ul class="text-wht bg-purple hidden md:block" aria-labelledby="dropdownHoverButton">
                             @foreach($categories as $category)
                             <li class="group flex justify-between items-center pr-4 hover:bg-wht hover:text-pinkDark">
                                 <a href="{{ route('servicesquotidien-category', $category->id) }}"
@@ -51,7 +51,7 @@
 
                     <div id="dropdownHover"
                          class="z-10 hidden bg-white divide-y divide-gray-100 text-sm w-11/12 md:w-40">
-                        <ul class="text-wht bg-purple w-full" aria-labelledby="dropdownHoverButton">
+                        <ul class="text-wht bg-purple w-full hidden md:block" aria-labelledby="dropdownHoverButton">
                             @foreach($posts_conciergerie_airbnb as $post)
                             @if($post->showNavigation)
                             <li class="group flex justify-between items-center pr-4 hover:bg-wht hover:text-pinkDark">

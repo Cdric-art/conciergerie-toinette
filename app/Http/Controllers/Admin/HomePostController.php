@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\HomePost;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class HomePostController extends Controller
@@ -28,10 +28,8 @@ class HomePostController extends Controller
     {
 
         if ($request->hasFile('image')) {
-
-            $imageName = time() . '.' . $request->file('image')->extension();
-            $request->file('image')->move(public_path('images'), $imageName);
-
+            $imageName = $request->file('image')->getClientOriginalName();
+            $request->image->storeAs('images', $imageName);
         }
 
         HomePost::create([
@@ -61,11 +59,11 @@ class HomePostController extends Controller
     public function update(Request $request, HomePost $homePost): RedirectResponse
     {
         if ($request->hasFile('image')) {
-            $img_path = public_path('images/' . $homePost->image);
-            File::delete($img_path);
-
-            $imageName = time() . '.' . $request->file('image')->extension();
-            $request->file('image')->move(public_path('images'), $imageName);
+            $imageName = $request->file('image')->getClientOriginalName();
+            if(Storage::get('images/' . $homePost->image)) {
+                Storage::delete('images/' . $homePost->image);
+            }
+            $request->image->storeAs('images', $imageName);
 
             $homePost->update([
                 "image" => $imageName,
@@ -91,8 +89,9 @@ class HomePostController extends Controller
      */
     public function destroy(HomePost $homePost): RedirectResponse
     {
-        $img_path = public_path('images/' . $homePost->image);
-        File::delete($img_path);
+        if(Storage::get('images/' . $homePost->image)) {
+            Storage::delete('images/' . $homePost->image);
+        }
 
         HomePost::destroy($homePost->id);
         return redirect(route('dashboard'))->with('success', "Le post à bien été supprimé.");

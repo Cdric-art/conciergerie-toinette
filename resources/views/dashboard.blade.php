@@ -95,7 +95,7 @@
                     {{ \Illuminate\Support\Str::of($homePost->content)->limit(100) }}
                 </td>
                 <td class="px-4 py-4">
-                    <img class="w-1/4" src="{{ asset('images/' . $homePost->image) }}" alt="{{ $homePost->image }}">
+                    <img class="w-1/4" src="{{ asset('storage/images/' . $homePost->image) }}" alt="{{ $homePost->image }}">
                 </td>
                 <td class="px-4 py-4">
                     @if($homePost->inverseContent)

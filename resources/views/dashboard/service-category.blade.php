@@ -71,7 +71,7 @@
                         {{ $category->title }}
                     </td>
                     <td class="px-4 py-4 w-1/4">
-                        <img class="w-1/4" src="{{ asset('images/' . $category->image) }}" alt="{{ $category->image }}">
+                        <img class="w-1/4" src="{{ asset('storage/images/' . $category->image) }}" alt="{{ $category->image }}">
                     </td>
                     <td class="px-4 py-4">
                         {{ date('d-m-Y', strtotime($category->created_at)) }}

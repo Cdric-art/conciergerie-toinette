@@ -119,7 +119,7 @@
                     {{ Str::of($service->post_scriptum)->limit(30) }}
                 </td>
                 <td class="px-4 py-4 w-1/4">
-                    <img src="{{ asset('images/' . $service->image) }}" alt="{{ $service->image }}">
+                    <img src="{{ asset('storage/images/' . $service->image) }}" alt="{{ $service->image }}">
                 </td>
                 <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
                     {{ $service->price }}

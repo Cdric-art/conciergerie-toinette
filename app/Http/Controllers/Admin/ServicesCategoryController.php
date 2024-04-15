@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ServicesCategory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ServicesCategoryController extends Controller
@@ -26,8 +26,8 @@ class ServicesCategoryController extends Controller
             'image' => 'required',
         ]);
 
-        $imageName = time() . '.' . $request->file('image')->extension();
-        $request->file('image')->move(public_path('images'), $imageName);
+        $imageName = $request->file('image')->getClientOriginalName();
+        $request->image->storeAs('images', $imageName);
 
         ServicesCategory::create([
             "title" => $request->get('title'),
@@ -47,11 +47,11 @@ class ServicesCategoryController extends Controller
     public function update(Request $request, ServicesCategory $category): RedirectResponse
     {
         if ($request->hasFile('image')) {
-            $img_path = public_path('images/' . $category->image);
-            File::delete($img_path);
-
-            $imageName = time() . '.' . $request->file('image')->extension();
-            $request->file('image')->move(public_path('images'), $imageName);
+            $imageName = $request->file('image')->getClientOriginalName();
+            if(Storage::get('images/' . $category->image)) {
+                Storage::delete('images/' . $category->image);
+            }
+            $request->image->storeAs('images', $imageName);
 
             $category->update([
                 "image" => $imageName,
@@ -72,8 +72,9 @@ class ServicesCategoryController extends Controller
 
     public function destroy(ServicesCategory $category): RedirectResponse
     {
-        $img_path = public_path('images/' . $category->image);
-        File::delete($img_path);
+        if(Storage::get('images/' . $category->image)) {
+            Storage::delete('images/' . $category->image);
+        }
 
         ServicesCategory::destroy($category->id);
         return redirect(route('category'))->with('success', "La catégorie à bien été supprimé.");

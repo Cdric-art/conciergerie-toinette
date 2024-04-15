@@ -7,7 +7,7 @@ use App\Models\ServicesCategory;
 use App\Models\ServicesPost;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ServicesPostController extends Controller
@@ -29,8 +29,8 @@ class ServicesPostController extends Controller
             'image' => 'required',
         ]);
 
-        $imageName = time() . '.' . $request->file('image')->extension();
-        $request->file('image')->move(public_path('images'), $imageName);
+        $imageName = $request->file('image')->getClientOriginalName();
+        $request->image->storeAs('images', $imageName);
 
         ServicesPost::create([
             "servicesCategory_id" => $request->get('category_id'),
@@ -55,11 +55,11 @@ class ServicesPostController extends Controller
     public function update(Request $request, ServicesPost $service): RedirectResponse
     {
         if ($request->hasFile('image')) {
-            $img_path = public_path('images/' . $service->image);
-            File::delete($img_path);
-
-            $imageName = time() . '.' . $request->file('image')->extension();
-            $request->file('image')->move(public_path('images'), $imageName);
+            $imageName = $request->file('image')->getClientOriginalName();
+            if(Storage::get('images/' . $service->image)) {
+                Storage::delete('images/' . $service->image);
+            }
+            $request->image->storeAs('images', $imageName);
 
             $service->update([
                 "image" => $imageName,
@@ -89,8 +89,9 @@ class ServicesPostController extends Controller
 
     public function destroy(ServicesPost $service): RedirectResponse
     {
-        $img_path = public_path('images/' . $service->image);
-        File::delete($img_path);
+        if(Storage::get('images/' . $service->image)) {
+            Storage::delete('images/' . $service->image);
+        }
 
         ServicesPost::destroy($service->id);
         return redirect(route('services', $service->servicesCategory_id))->with('success', "Le service à bien été supprimé.");

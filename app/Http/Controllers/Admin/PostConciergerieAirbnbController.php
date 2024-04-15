@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\PostConciergerieAirbnb;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class PostConciergerieAirbnbController extends Controller
@@ -27,10 +27,8 @@ class PostConciergerieAirbnbController extends Controller
     public function store(Request $request): RedirectResponse
     {
         if ($request->hasFile('image')) {
-
-            $imageName = time() . '.' . $request->file('image')->extension();
-            $request->file('image')->move(public_path('images'), $imageName);
-
+            $imageName = $request->file('image')->getClientOriginalName();
+            $request->image->storeAs('images', $imageName);
         }
 
         PostConciergerieAirbnb::create([
@@ -63,11 +61,11 @@ class PostConciergerieAirbnbController extends Controller
     {
 
         if ($request->hasFile('image')) {
-            $img_path = public_path('images/' . $post->image);
-            File::delete($img_path);
-
-            $imageName = time() . '.' . $request->file('image')->extension();
-            $request->file('image')->move(public_path('images'), $imageName);
+            $imageName = $request->file('image')->getClientOriginalName();
+            if(Storage::get('images/' . $post->image)) {
+                Storage::delete('images/' . $post->image);
+            }
+            $request->image->storeAs('images', $imageName);
 
             $post->update([
                 "image" => $imageName,
@@ -96,8 +94,9 @@ class PostConciergerieAirbnbController extends Controller
      */
     public function destroy(PostConciergerieAirbnb $post): RedirectResponse
     {
-        $img_path = public_path('images/' . $post->image);
-        File::delete($img_path);
+        if(Storage::get('images/' . $post->image)) {
+            Storage::delete('images/' . $post->image);
+        }
 
         PostConciergerieAirbnb::destroy($post->id);
         return redirect(route('conciergerie'))->with('success', "Le post à bien été supprimé.");

@@ -18,7 +18,7 @@
 
                 <div class="relative">
                     <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
-                         src="{{ asset('images/' . $homePost->image) }}" alt="image">
+                         src="{{ asset('storage/images/' . $homePost->image) }}" alt="image">
                     @if(empty($homePost->content))
                     <h3 class="block absolute bottom-4 left-0 right-0 text-3xl text-pinkDark pt-2">{{ $homePost->title
                         }}</h3>
@@ -45,7 +45,7 @@
                 @endif
                 <div>
                     <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
-                         src="{{ asset('images/' . $homePost->image) }}" alt="image">
+                         src="{{ asset('storage/images/' . $homePost->image) }}" alt="image">
                     @if(empty($homePost->content))
                     <h3 class="text-4xl text-purple pt-2">{{ mb_strtoupper($homePost->title) }}</h3>
                     @endif

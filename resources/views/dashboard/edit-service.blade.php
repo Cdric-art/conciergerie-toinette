@@ -53,7 +53,7 @@
                 </div>
                 <div class="mb-8">
                     <label class="block mb-2 text-sm font-medium text-gray-900" for="image">Image</label>
-                    <img class="w-1/4 p-4" src="{{ asset('images/' . $service->image) }}" alt="{{ $service->image }}">
+                    <img class="w-1/4 p-4" src="{{ asset('storage/images/' . $service->image) }}" alt="{{ $service->image }}">
                     <input name="image" type="file"
                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
                            aria-describedby="image">

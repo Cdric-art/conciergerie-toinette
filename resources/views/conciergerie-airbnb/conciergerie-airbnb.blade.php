@@ -23,7 +23,7 @@
                     <div class="flex flex-wrap md:justify-around items-center">
                         <div class="relative">
                             <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
-                                 src="{{ asset('images/' . $post->image) }}" alt="image">
+                                 src="{{ asset('storage/images/' . $post->image) }}" alt="image">
                             @if(empty($post->content))
                             <h3 class="block absolute bottom-0 left-0 right-0 text-3xl text-pinkLight pt-2">{{
                                 $post->title
@@ -53,7 +53,7 @@
                 @endif
                 <div>
                     <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
-                         src="{{ asset('images/' . $post->image) }}" alt="image">
+                         src="{{ asset('storage/images/' . $post->image) }}" alt="image">
                     @if(empty($post->content))
                     <h3 class="text-4xl text-pinkLight pt-2">{{ $post->title }}</h3>
                     @endif
@@ -69,7 +69,7 @@
 
                 <div class="relative">
                     <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px] rounded-md"
-                         src="{{ asset('images/' . $post->image) }}" alt="image">
+                         src="{{ asset('storage/images/' . $post->image) }}" alt="image">
                     @if(empty($post->content))
                     <h3 class="block absolute bottom-[12px] left-0 right-0 text-3xl text-pinkDark px-2">{{ $post->title
                         }}</h3>
@@ -96,7 +96,7 @@
                 @endif
                 <div>
                     <img class="max-h-[300px] max-w-[380px] sm:max-w-[455px]"
-                         src="{{ asset('images/' . $post->image) }}" alt="image">
+                         src="{{ asset('storage/images/' . $post->image) }}" alt="image">
                     @if(empty($post->content))
                     <h3 class="text-4xl text-pinkLight pt-2">{{ $post->title }}</h3>
                     @endif

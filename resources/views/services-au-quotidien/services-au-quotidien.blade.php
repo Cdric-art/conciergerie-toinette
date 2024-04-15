@@ -9,7 +9,7 @@
             <div class="relative max-w-[380px] sm:max-w-[455px] my-8">
                 <a href="{{ route('servicesquotidien-category', $category) }}">
                     <img class="w-full"
-                         src="{{ asset('images/' . $category->image) }}" alt="image">
+                         src="{{ asset('storage/images/' . $category->image) }}" alt="{{ $category->image }}">
                 </a>
                 <h3 class="block absolute bottom-0 left-0 right-0 text-3xl text-pinkDark pt-2">{{ $category->title
                     }}</h3>

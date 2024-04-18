@@ -19,9 +19,9 @@
                        data-dropdown-toggle="dropdownHoverServices" data-dropdown-trigger="hover"
                        class="block py-2 px-3 text-pinkDark bg-wht border border-pinkDark hover:text-wht hover:border-transparent hover:bg-purple"
                        type="button">
-                        Services au quotidien
+                       Services au quotidien
                     </a>
-
+                       
                     <div id="dropdownHoverServices"
                          class="hidden z-10 bg-white divide-y divide-gray-100 text-sm w-11/12 md:w-40">
                         <ul class="text-wht bg-purple hidden md:block" aria-labelledby="dropdownHoverButton">
@@ -43,12 +43,11 @@
 
                 <li>
                     <a href="{{ route('conciergerie_airbnb') }}" id="dropdownHoverButton"
-                       data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
+                    data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
                        class="block py-2 px-3 text-pinkDark bg-wht border border-pinkDark hover:text-wht hover:border-transparent hover:bg-purple"
                        type="button">
                         Conciergerie Airbnb
                     </a>
-
                     <div id="dropdownHover"
                          class="z-10 hidden bg-white divide-y divide-gray-100 text-sm w-11/12 md:w-40">
                         <ul class="text-wht bg-purple w-full hidden md:block" aria-labelledby="dropdownHoverButton">

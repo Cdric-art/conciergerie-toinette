@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 // HOME
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index'])->name('home');
-// SERVICES AU QUOTIDIEN
 
+// SERVICES AU QUOTIDIEN
 Route::controller(\App\Http\Controllers\ServicesQuotidienController::class)->group(function () {
     Route::get('/services-au-quotidien', 'index')->name('servicesquotidien');
     Route::get('/services-au-quotidien/{category}', 'show')->name('servicesquotidien-category');

@@ -15,7 +15,7 @@
                 <span class="text-xs p-2 mb-4 border border-pinkDark">{{ ($service->price) }}</span>
                 <div class="flex mt-4 text-wht justify-center lg:justify-start">
                     <a class="flex justify-between items-center text-xs p-2 bg-pinkDark group hover:pr-1"
-                       href="mailto:nina@conciergerie-toinette.fr">Contact
+                       href="mailto:nina@conciergerie-toinette.fr">Je réserve ce service
                         <svg
                             class="hidden ml-2 transition w-2 h-2 group-hover:block"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"

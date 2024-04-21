@@ -70,7 +70,7 @@
                 </li>
 
                 <li>
-                    <a href="#"
+                    <a href="{{ route('a-propos') }}"
                        class="block py-2 px-3 text-pinkDark bg-wht border border-pinkDark hover:text-wht hover:border-transparent hover:bg-purple"
                        type="button">
                         À propos

@@ -18,6 +18,11 @@ Route::controller(\App\Http\Controllers\ConciergerieAirbnbController::class)->gr
     Route::get('conciergerie-airbnb/{post}', 'show')->name('conciergerie_airbnb.post');
 });
 
+// A PROPOS
+Route::get('/a-propos', function() {
+    return view('a-propos.a-propos');
+})->name('a-propos'); 
+
 // ADMIN - HOME
 Route::controller(\App\Http\Controllers\Admin\HomePostController::class)->middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', 'index')->name('dashboard');

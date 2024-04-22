@@ -3,6 +3,8 @@
 
         <x-title title="CONCIERGERIE TOINETTE" subtitle="Des bras en plus pour gérer votre quotidien" color="pinkDark"/>
 
+        <h2 class="text-xl pb-4 text-pinkDark">Zone d’intervention : Puteaux – Suresnes</h2>
+
         <section>
             <div class="flex flex-wrap justify-center lg:justify-start items-center my-16">
                 <div>

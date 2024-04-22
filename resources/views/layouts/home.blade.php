@@ -11,6 +11,8 @@
     <meta property="og:url" content="">
     <meta property="og:image" content="">
 
+    <link rel="icon" href="{{ asset('favicon.ico')}}" />
+
     <title>Conciergerie Toinette</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])

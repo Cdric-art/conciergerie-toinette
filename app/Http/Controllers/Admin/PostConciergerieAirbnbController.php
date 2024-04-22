@@ -36,8 +36,8 @@ class PostConciergerieAirbnbController extends Controller
             "title" => $request->get('title'),
             "subtitle" => $request->get('subtitle'),
             "content" => $request->get('content'),
-            "inverseContent" => $request->get('inverseContent') ?? false,
-            "showNavigation" => $request->get('showNavigation') ?? false,
+            "inverseContent" => $request->get('inverseContent') ? true : false,
+            "showNavigation" => $request->get('showNavigation') ? true : false,
             "image" => $imageName ?? null,
         ])->save();
 
@@ -79,8 +79,8 @@ class PostConciergerieAirbnbController extends Controller
             "title" => $request->get('title'),
             "subtitle" => $request->get('subtitle'),
             "content" => $request->get('content'),
-            "inverseContent" => $request->get('inverseContent') ?? false,
-            "showNavigation" => $request->get('showNavigation') ?? false,
+            "inverseContent" => $request->get('inverseContent') ? true : false,
+            "showNavigation" => $request->get('showNavigation') ? true : false,
             "updated_at" => time(),
         ]);
 

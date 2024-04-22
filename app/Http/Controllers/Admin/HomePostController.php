@@ -35,7 +35,7 @@ class HomePostController extends Controller
         HomePost::create([
             "title" => $request->get('title'),
             "content" => $request->get('content'),
-            "inverseContent" => $request->get('inverseContent') ?? false,
+            "inverseContent" => $request->get('inverseContent') ? true : false,
             "image" => $imageName ?? null,
         ])->save();
 
@@ -75,7 +75,7 @@ class HomePostController extends Controller
         $homePost->update([
             "title" => $request->get('title'),
             "content" => $request->get('content'),
-            "inverseContent" => $request->get('inverseContent') ?? false,
+            "inverseContent" => $request->get('inverseContent') ? true : false,
             "updated_at" => time(),
         ]);
 

@@ -7,7 +7,7 @@
 
     <x-sidebar/>
 
-    <div class="relative max-w-6xl left-[304px] top-[16px] mb-8 shadow-md sm:rounded-lg">
+    <div class="relative w-[82vw] left-[240px] top-[16px] mb-8 shadow-md sm:rounded-lg">
         <h2 class="font-semibold text-gray-700 leading-tight p-4">
             Modifier le service
         </h2>
@@ -31,7 +31,7 @@
                 </textarea>
                 </div>
                 <div class="mb-5">
-                    <label for="second_content" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                    <label for="second_content" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Seconde description</label>
                     <textarea id="second_content" name="second_content" rows="4"
                               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                               placeholder="Description...">{{ $service->second_content }}

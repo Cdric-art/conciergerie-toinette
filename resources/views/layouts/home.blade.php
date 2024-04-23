@@ -27,7 +27,8 @@
 
 <footer class="w-full bg-white text-center">
     <p class="text-blk text-xs sm:text-sm p-4">
-        © 2024 | S.A.S.U. « CONCIERGERIE TOINETTE » | 06 83 98 25 59 | MENTIONS LEGALES
+        © 2024 | S.A.S.U. « CONCIERGERIE TOINETTE » | 06 83 98 25 59 | 
+        <a class="hover:underline" href="{{ route('mentions-legales')}}">MENTIONS LEGALES</a>
     </p>
 </footer>
 </body>

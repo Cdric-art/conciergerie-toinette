@@ -27,7 +27,7 @@
                 afin de garantir à toutes et tous une certaine réactivité et une grande disponibilité.</p>
         </div>
 
-        <div class="max-w-3xl mx-auto text-pinkDark">
+        <div class="max-w-3xl mx-auto text-pinkDark pb-4">
             <h2 class="md:text-4xl text-2xl md:p-8 p-4 md:mt-4">Contact</h2>
 
             <p class="text-pinkDark lg:text-lg px-2 md:pl-8 pb-4">N’hésitez pas à me téléphoner ou à m’envoyer un message, j’étudie toute demande !</p>

@@ -7,7 +7,7 @@
 
     <x-sidebar/>
 
-    <div class="relative max-w-6xl left-[304px] top-[16px] mb-8 shadow-md sm:rounded-lg">
+    <div class="relative w-[82vw] left-[240px] top-[16px] mb-8 shadow-md sm:rounded-lg">
         <h2 class="font-semibold text-gray-700 leading-tight p-4">
             Services au quotidien - Service de la catégorie : {{ $category->title }}
         </h2>
@@ -33,7 +33,7 @@
                 </textarea>
                 </div>
                 <div class="mb-5">
-                    <label for="second_content" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                    <label for="second_content" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Seconde description</label>
                     <textarea id="second_content" name="second_content" rows="4"
                               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                               placeholder="Description...">
@@ -68,7 +68,7 @@
             </div>
         </form>
 
-        <table class="text-xs text-left rtl:text-right text-gray-500">
+        <table class="w-full text-xs text-left rtl:text-right text-gray-500">
 
             <thead class="text-gray-700 uppercase bg-gray-50">
             <tr>
@@ -118,7 +118,7 @@
                 <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
                     {{ Str::of($service->post_scriptum)->limit(30) }}
                 </td>
-                <td class="px-4 py-4 w-1/4">
+                <td class="px-4 py-4 w-28">
                     <img src="{{ asset('storage/images/' . $service->image) }}" alt="{{ $service->image }}">
                 </td>
                 <td class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">

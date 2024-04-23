@@ -50,7 +50,7 @@
                     src="{{ asset('assets/home_img_droite.png') }}" alt="home-image-left">
                 </div>
             </div>
-            <div class="text-start my-16 max-w-[80vw] ml-auto text-pinkDark">
+            <div class="text-start my-16 max-w-[80vw] ml-auto text-pinkDark pb-4">
                 <h3 class="text-3xl md:text-6xl pb-4">Contact</h3>
                 <p class="md:text-2xl">nina@conciergerie-toinette.fr</p>
                 <p class="md:text-2xl">06 83 98 25 59</p>

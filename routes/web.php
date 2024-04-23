@@ -23,6 +23,11 @@ Route::get('/a-propos', function() {
     return view('a-propos.a-propos');
 })->name('a-propos'); 
 
+// MENTIONS LEGALES
+Route::get('/mentions-legales', function() {
+    return view('mentions-legales.mentions-legales');
+})->name('mentions-legales'); 
+
 // ADMIN - HOME
 Route::controller(\App\Http\Controllers\Admin\HomePostController::class)->middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', 'index')->name('dashboard');

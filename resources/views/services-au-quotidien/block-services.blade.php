@@ -3,9 +3,9 @@
 
         @foreach($services as $service)
 
-        <div class="grid lg:grid-cols-2 max-w-6xl mx-auto md:px-8 px-4 pt-20 pb-8">
+        <div class="grid lg:grid-cols-2 max-w-6xl mx-auto md:px-8 px-4 md:pt-20 pb-8">
             <div class="self-center justify-self-center">
-                <img class="h-[395px]" src="{{ asset('storage/images/' . $service->image) }}" alt="{{ $service->image }}">
+                <img class="h-[280px] md:h-[395px]" src="{{ asset('storage/images/' . $service->image) }}" alt="{{ $service->image }}">
             </div>
             <div class="lg:self-start lg:justify-self-start lg:text-start text-pinkDark">
                 <h2 class="text-6xl py-4">{{ mb_strtoupper($service->title) }}</h2>

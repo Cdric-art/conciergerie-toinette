@@ -6,7 +6,7 @@
         <h2 class="text-xl pb-4 text-pinkDark">Zone d’intervention : Puteaux – Suresnes</h2>
 
         <section>
-            <div class="flex flex-wrap justify-center lg:justify-start items-center my-16">
+            <div class="flex flex-wrap justify-center lg:justify-start items-center mt-16">
                 <div>
                     <img class="w-[380px] sm:w-[455px]" 
                     src="{{ asset('assets/home_img_gauche.png') }}" alt="home-image-left">
